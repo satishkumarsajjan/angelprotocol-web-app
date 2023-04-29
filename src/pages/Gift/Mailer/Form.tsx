@@ -60,7 +60,7 @@ export default function Form({ classes = "" }) {
       className={`justify-self-center grid padded-container w-full max-w-[32rem] gap-5 ${classes}`}
       autoComplete="off"
     >
-      <h3 className="text-center text-3xl font-bold leading-snug">
+      <h3 className="text-center text-3xl leading-snug">
         {`Send Your ${APP_NAME} Giftcard via Email`}
       </h3>
       <Field<FV> name="purchaser" label="Your name" classes="field-gift" />

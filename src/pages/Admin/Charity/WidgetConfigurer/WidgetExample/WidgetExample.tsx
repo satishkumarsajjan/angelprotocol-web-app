@@ -19,7 +19,7 @@ export default function WidgetExample({ trigger }: { trigger: boolean }) {
       <div className="grid grid-rows-[1fr_auto] gap-10 h-full">
         <div className="flex flex-col gap-3 max-w-3xl h-full mx-auto px-5">
           <header className="flex justify-center items-center gap-10 w-full h-24 z-10">
-            <h1 className="text-xl font-heading font-bold">
+            <h1 className="text-xl">
               {getPossessiveForm(endowName)} endowment
             </h1>
             <button className="btn btn-orange px-3 h-10 rounded-lg text-xs normal-case">

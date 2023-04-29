@@ -75,7 +75,7 @@ export default function VerifiedEmail({ classes = "" }: { classes?: string }) {
   return (
     <Container classes={classes}>
       <Icon type="CheckCircle" className="text-green" size={80} />
-      <h1 className="text-[2rem] font-bold mt-10 text-center">
+      <h1 className="text-[2rem] mt-10 text-center">
         Your email address is confirmed!
       </h1>
       <Text classes="mb-8 mt-2">

@@ -23,7 +23,7 @@ export default function Err({
         <Icon type="Exclamation" size={45} className="text-white m-5" />
       </div>
 
-      <h3 className="text-2xl sm:text-3xl mb-4 sm:mb-12 font-bold text-center">
+      <h3 className="text-2xl sm:text-3xl mb-4 sm:mb-12 text-center">
         Something went wrong!
       </h3>
       <p className="text-center">

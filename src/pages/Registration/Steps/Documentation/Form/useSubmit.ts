@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { FormValues } from "../types";
 import { useUpdateRegMutation } from "services/aws/registration";
 import { useErrorContext } from "contexts/ErrorContext";
-import { handleMutationResult } from "helpers";
 import { useRegState } from "../../StepGuard";
 import { getFilePreviews } from "./getFilePreviews";
 
@@ -38,9 +37,8 @@ export default function useSubmit() {
     if (documentation && !isDirty) {
       return navigate(`../${step}`, { state: init });
     }
-
-    const previews = await getFilePreviews({ ...documents });
-    handleMutationResult(
+    try {
+      const previews = await getFilePreviews({ ...documents });
       await updateReg({
         type: "documentation",
         reference: init.reference,
@@ -58,9 +56,15 @@ export default function useSubmit() {
         EndowDesignation: endowDesignation.value,
         ActiveInCountries: activeInCountries.map((opt) => opt.value),
         CashEligible: cashEligible,
-      }),
-      handleError
-    );
+      })
+        .unwrap()
+        .catch(handleError);
+    } catch (err) {
+      handleError(err);
+    }
   };
-  return { submit: handleSubmit(submit), isSubmitting };
+  return {
+    submit: handleSubmit(submit),
+    isSubmitting,
+  };
 }

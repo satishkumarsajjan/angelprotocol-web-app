@@ -5,7 +5,7 @@ type Props = { className: string; onClose: () => void };
 export default function MobileTitle({ className, onClose }: Props) {
   return (
     <h3
-      className={`${className} flex justify-between items-center w-full px-4 py-3 bg-orange-l6 border-b border-prim font-heading font-black text-xl text-orange uppercase dark:bg-blue-d7`}
+      className={`${className} flex justify-between items-center w-full px-4 py-3 bg-orange-l6 border-b border-prim font-black text-xl text-orange uppercase dark:bg-blue-d7`}
     >
       Wallet
       <button

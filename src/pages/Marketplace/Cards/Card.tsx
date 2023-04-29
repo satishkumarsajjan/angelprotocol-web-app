@@ -4,6 +4,7 @@ import { EndowmentCard } from "types/aws";
 import { UNSDG_NUMS } from "types/lists";
 import BookmarkBtn from "components/BookmarkBtn";
 import Icon from "components/Icon";
+import Image from "components/Image";
 import Tooltip from "components/Tooltip";
 import { isEmpty } from "helpers";
 import { appRoutes } from "constants/routes";
@@ -35,18 +36,13 @@ export default function Card({
         to={`${appRoutes.profile}/${id}`}
         className="grid grid-rows-[auto_1fr] h-full"
       >
-        <img
-          loading="lazy"
+        <Image
           src={image}
           className="h-40 w-full object-cover bg-blue-l4 dark:bg-blue-d2"
-          alt=""
-          onError={(e) => {
-            e.currentTarget.classList.add("bg-blue-l3");
-          }}
         />
         <div className="flex flex-col p-3 pb-4 gap-3">
           {/* ENDOWMENT NAME */}
-          <h3 className="font-bold text-ellipsis line-clamp-2">{name}</h3>
+          <h3 className="text-ellipsis line-clamp-2">{name}</h3>
           {/* TAGLINE */}
           {tagline && tagline !== PLACEHOLDER_TAGLINE ? (
             <p className="peer text-gray-d1 dark:text-gray text-sm -mt-2">

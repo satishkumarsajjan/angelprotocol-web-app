@@ -1,6 +1,7 @@
 import { WithoutInstallers } from "contexts/WalletContext/types";
 import { Chain } from "types/aws";
 import { WALLET_METADATA } from "contexts/WalletContext/constants";
+import { chainIds } from "constants/chainIds";
 import { EMAIL_SUPPORT } from "constants/common";
 import { EXPECTED_NETWORK_TYPE } from "constants/env";
 
@@ -91,7 +92,7 @@ export class UnsupportedChainError extends APError {
   constructor(unsupportedChainId: string) {
     super(
       "UnsupportedChainError",
-      `Chain ID ${unsupportedChainId} not supported. The only supported networks are on: Juno, Polygon, Terra, Binance and Ethereum. Please switch to one of those and reload the page`
+      `The chain you are connected to (ID: ${unsupportedChainId}) is not supported. Valid networks are ${EXPECTED_NETWORK_TYPE} ones on: Juno (${chainIds.juno}), Polygon (${chainIds.polygon}), Terra (${chainIds.terra}), Binance (${chainIds.binance}) and Ethereum (${chainIds.ethereum}). Please switch to one of those and reload the page.`
     );
   }
 }

@@ -27,7 +27,7 @@ export default function Combobox() {
     query: debouncedQuery || "matchall",
     sort: "default",
     endow_types: "Charity",
-    tiers: "Level2,Level3",
+    tiers: "Level1,Level2,Level3",
     sdgs: Object.keys(unsdgs).join(","),
     kyc_only: "true,false",
     start: 0,

@@ -1,5 +1,6 @@
 import {
   ContactRoles,
+  EndowDesignation,
   FileObject,
   ReferralMethods,
   RegistrationStatus,
@@ -59,7 +60,7 @@ export type Documentation = {
   level: EndowmentTierNum;
 
   hqCountry: Country;
-  endowDesignation: OptionType<string>;
+  endowDesignation: OptionType<EndowDesignation> | OptionType<"">;
   // general info
   activeInCountries: OptionType<string>[];
 };

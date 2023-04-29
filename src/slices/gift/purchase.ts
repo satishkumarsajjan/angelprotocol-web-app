@@ -54,7 +54,8 @@ export const purchase = createAsyncThunk<void, Args>(
 
         if (!res.ok) {
           return updateTx({
-            error: `Failed to save gift card code. Kindly contact ${EMAIL_SUPPORT}. Transaction: ${response.transactionHash}`,
+            error: `Failed to save gift card code. Kindly contact ${EMAIL_SUPPORT}.`,
+            hash: response.transactionHash,
           });
         }
         /** no problems, save giftcard code on user's computer */

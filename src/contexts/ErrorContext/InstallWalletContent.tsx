@@ -22,9 +22,7 @@ export default function InstallWallet(props: {
 
         <div className="flex flex-col text-left ml-3 md:ml-5">
           <div className="flex items-center gap-2 dark:text-white font-bold">
-            <h6 className="text-base md:text-lg font-heading">
-              Install {name}
-            </h6>
+            <h6 className="text-base md:text-lg">Install {name}</h6>
             <Icon type="ExternalLink" size={20} />
           </div>
           <p className="text-sm md:text-base text-gray mt-1 truncate w-40 md:w-72">

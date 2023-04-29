@@ -21,7 +21,7 @@ export default function Purchase({ classes = "" }) {
     >
       {isHeadingShown(state) && (
         <>
-          <h3 className="text-center text-3xl font-bold leading-snug">
+          <h3 className="text-center text-3xl leading-snug">
             {`Purchase ${APP_NAME} Giftcard`}
           </h3>
           <Progress classes="my-12" />

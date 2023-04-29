@@ -45,7 +45,7 @@ function Dashboard() {
 
   return (
     <div className="grid">
-      <h3 className="text-lg font-bold mb-2">Summary</h3>
+      <h3 className="text-lg mb-2">Summary</h3>
       <p className="text-sm mb-8">
         {status === "Inactive" && //keep bottom margin
           "Please confirm that each step has been correctly completed so that your organization can be properly registered."}

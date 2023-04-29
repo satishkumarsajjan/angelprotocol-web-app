@@ -24,7 +24,7 @@ export default function InnerComponent(props: {
     <div className="grid grid-rows-[1fr_auto] gap-10 bg-white">
       <div className="flex flex-col gap-3 max-w-3xl h-full mx-auto px-5">
         <header className="flex justify-center items-center gap-10 w-full h-24 z-20">
-          <h1 className="text-lg sm:text-3xl font-heading font-bold">
+          <h1 className="text-lg sm:text-3xl">
             {getPossessiveForm(props.name)} endowment
           </h1>
           <WalletSuite />

@@ -19,7 +19,7 @@ export default function Success({ classes = "" }: { classes?: string }) {
       className={`${classes} grid padded-container max-w-lg justify-items-center`}
     >
       <Icon type="CheckCircle" className="text-green" size={92} />
-      <h1 className="text-[2rem] font-bold mt-10 text-center">
+      <h1 className="text-[2rem] mt-10 text-center">
         {contact.orgName}’s endowment has been created!
       </h1>
       <Link

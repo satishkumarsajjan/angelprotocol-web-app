@@ -20,7 +20,7 @@ export default function WalletSubmission({
   if (!(providerId === "keplr" || providerId === "keplr-wc")) {
     return (
       <div className="text-center md:text-left">
-        <h3 className="text-lg font-bold mb-4 flex items-center justify-center md:justify-start gap-3">
+        <h3 className="text-lg mb-4 flex items-center justify-center md:justify-start gap-3">
           <Icon type="Info" className="text-red" size={28} />
           <span>Unsupported wallet</span>
         </h3>
@@ -44,7 +44,7 @@ export default function WalletSubmission({
 
   return (
     <div className="grid justify-self-center md:justify-self-start max-w-[27.31rem]">
-      <h3 className="text-center md:text-left text-lg font-bold">
+      <h3 className="text-center md:text-left text-lg">
         You are already connected to a Wallet:
       </h3>
       <div className="grid grid-cols-[auto_1fr] items-center border border-prim p-4 rounded mt-8">
@@ -53,7 +53,7 @@ export default function WalletSubmission({
           alt=""
           className="w-10 h-10 object-contain row-span-2 mr-4"
         />
-        <h6 className="capitalize font-bold text-lg mb-1">{providerId}</h6>
+        <h6 className="capitalize text-lg mb-1">{providerId}</h6>
         <span className="text-sm truncate">{address}</span>
       </div>
 

@@ -32,6 +32,7 @@ interface Props<
   placeholder?: string;
   options: OptionType<V>[];
   disabled?: true;
+  allSelectable?: M extends true ? boolean : never;
   classes?: Classes;
   children?: (selected: VarOption<M, V>) => ReactNode;
 }
@@ -52,6 +53,7 @@ export function Selector<
   children,
   classes,
   multiple,
+  allSelectable = false as any,
 }: Props<T, K, ValueType, Multiple>) {
   const { container = "", button = "" } = classes || {};
   const {
@@ -112,14 +114,18 @@ export function Selector<
         </Listbox.Button>
         <Listbox.Options className="rounded-sm text-sm border border-prim absolute top-full mt-2 z-10 bg-gray-l5 dark:bg-blue-d6 w-full max-h-[10rem] overflow-y-auto scroller">
           {multiple && (
-            <div className="flex justify-between p-4">
+            <div className="flex p-4">
               {isAllSelected ? (
                 <Action onClick={() => onChange([])}>Deselect All</Action>
               ) : (
-                <Action onClick={() => onChange(options)}>Select All</Action>
+                allSelectable && (
+                  <Action onClick={() => onChange(options)}>Select All</Action>
+                )
               )}
 
-              <Action onClick={() => resetField(name)}>Reset</Action>
+              <Action onClick={() => resetField(name)} classes="ml-auto">
+                Reset
+              </Action>
             </div>
           )}
 
@@ -184,11 +190,15 @@ function getSelectedValues<ValueType extends ValKey, Multiple extends boolean>(
   ));
 }
 
-function Action(props: PropsWithChildren<{ onClick: () => void }>) {
+function Action(
+  props: PropsWithChildren<{ onClick: () => void; classes?: string }>
+) {
   return (
     <button
       type="button"
-      className="cursor-pointer text-blue hover:text-orange hover:underline"
+      className={`${
+        props.classes ?? ""
+      } cursor-pointer text-blue hover:text-orange hover:underline`}
       onClick={props.onClick}
     >
       {props.children}

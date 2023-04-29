@@ -11,9 +11,7 @@ export default function Catcher(props: { airdrops: Airdrops }) {
   return (
     <Modal className="fixed-center z-20 w-full max-w-md bg-white flex flex-col rounded-md items-center p-4 shadow-lg min-h-[15rem]">
       <Icon type="Parachute" className="text-blue text-4xl" />
-      <h2 className="text-blue text-2xl font-bold uppercase text-center mt-2">
-        Airdrop
-      </h2>
+      <h2 className="text-blue text-2xl uppercase text-center mt-2">Airdrop</h2>
       <p className="text-blue font-heading text-2xl mt-4 mb-6">
         {humanize(totalClaimable)} HALO
       </p>

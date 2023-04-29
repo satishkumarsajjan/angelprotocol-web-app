@@ -29,7 +29,7 @@ export default function ConfirmEmail({ classes = "" }: { classes?: string }) {
     <div
       className={`max-w-lg grid content-start justify-items-center ${classes}`}
     >
-      <h1 className="text-[2rem] font-bold mb-2 text-center">
+      <h1 className="text-[2rem] mb-2 text-center">
         Confirm your email address
       </h1>
 

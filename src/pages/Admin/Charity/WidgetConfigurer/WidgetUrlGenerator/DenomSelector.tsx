@@ -24,6 +24,7 @@ export default function DenomSelector() {
             value: token.symbol,
           }))}
           classes={{ container: "bg-white dark:bg-blue-d6" }}
+          allSelectable
           multiple
         />
       )}

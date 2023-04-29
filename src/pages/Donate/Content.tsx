@@ -50,7 +50,7 @@ export default function Content(props: DonationRecipient) {
       />
 
       {isFinalized(state) && (
-        <h3 className="text-center text-xl sm:text-3xl font-bold leading-snug mb-4">
+        <h3 className="text-center text-xl sm:text-3xl leading-snug mb-4">
           You're about to make a donation to {state.recipient?.name}
         </h3>
       )}

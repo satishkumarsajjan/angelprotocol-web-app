@@ -4,7 +4,7 @@ import WidgetExample from "./WidgetExample";
 import WidgetUrlGenerator from "./WidgetUrlGenerator";
 import useWidgetConfigurer from "./useWidgetConfigurer";
 
-const TITLE_STYLE = "text-lg sm:text-2xl font-heading font-bold";
+const TITLE_STYLE = "text-lg sm:text-2xl";
 
 export default function WidgetConfigurer() {
   const { updateTriggered, widgetSnippet, methods, handleUpdateSnippet } =

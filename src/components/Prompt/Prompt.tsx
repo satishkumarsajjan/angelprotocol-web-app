@@ -29,7 +29,7 @@ export default function Prompt({
       </div>
       <PromptIcon type={type} classes="mb-6 sm:mb-8 mt-4 sm:mt-12" />
       {title && (
-        <h3 className="font-bold text-center text-3xl mb-2 leading-normal px-3 sm:px-8">
+        <h3 className="text-center text-3xl mb-2 leading-normal px-3 sm:px-8">
           {title}
         </h3>
       )}

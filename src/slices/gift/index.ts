@@ -61,7 +61,7 @@ export type SubmitStep = {
 export type TxResult = { hash: string };
 export type GiftCard = { secret: string };
 export type TLoading = { msg: string };
-export type TError = { error: string };
+export type TError = { error: string; hash?: string };
 export type TxStatus = TLoading | TError | TxResult | GiftCard;
 
 export type TxStep = {

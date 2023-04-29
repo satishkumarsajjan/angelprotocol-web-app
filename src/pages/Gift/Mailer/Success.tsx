@@ -10,7 +10,7 @@ export default function Success({ className = "", recipient = "" }) {
       <span className="bg-green rounded-full w-24 h-24 grid place-items-center">
         <Icon type="Check" className="text-white w-20 h-20" />
       </span>
-      <h3 className="text-2xl sm:text-3xl font-bold text-center">
+      <h3 className="text-2xl sm:text-3xl text-center">
         Giftcard Sent Successfully
       </h3>
       <p className="-mt-4 md:font-heading md:font-semibold text-center">

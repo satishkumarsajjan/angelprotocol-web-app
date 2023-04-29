@@ -14,7 +14,7 @@ import { ENDOW_DESIGNATIONS } from "constants/common";
 import { appRoutes } from "constants/routes";
 import { unsdgs } from "constants/unsdgs";
 import { getSDGLabelValuePair } from "./getSDGLabelValuePair";
-import { VALID_MIME_TYPES } from "./schema";
+import { MAX_SIZE_IN_BYTES, VALID_MIME_TYPES } from "./schema";
 import useEditProfile from "./useEditProfile";
 
 const sdgOptions = Object.entries(unsdgs).map(([key, { title }]) =>
@@ -23,6 +23,7 @@ const sdgOptions = Object.entries(unsdgs).map(([key, { title }]) =>
 
 export default function Form() {
   const { editProfile, isSubmitting, id, reset } = useEditProfile();
+
   return (
     <form
       onSubmit={editProfile}
@@ -84,6 +85,7 @@ export default function Form() {
             container: "mb-4",
             dropzone: "w-28 sm:w-48 aspect-square",
           }}
+          maxSize={MAX_SIZE_IN_BYTES}
         />
         <Label className="-mb-4" required>
           Description of your organization
@@ -126,6 +128,7 @@ export default function Form() {
             label: option.label,
             value: option.value,
           }))}
+          classes={{ button: "field-input-admin" }}
         />
         <Label className="-mb-4" required>
           Headquarters
@@ -143,7 +146,6 @@ export default function Form() {
         <ActivityCountries<FV, "active_in_countries">
           name="active_in_countries"
           classes={{
-            container: "bg-white dark:bg-blue-d6 px-4 py-3",
             button: "field-input-admin",
           }}
         />
@@ -228,7 +230,7 @@ function Group({
 }>) {
   return (
     <div className="grid gap-6 p-6 border border-prim rounded">
-      <h3 className="text-2xl font-bold font-body">{props.title}</h3>
+      <h3 className="text-2xl font-body">{props.title}</h3>
       {description && (
         <p className="-mt-4 text-lg font-semibold">{description}</p>
       )}

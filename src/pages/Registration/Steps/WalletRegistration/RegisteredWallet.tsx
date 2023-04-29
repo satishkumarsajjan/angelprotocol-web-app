@@ -11,7 +11,7 @@ export default function RegisteredWallet(props: {
   const { data } = useRegState<3>();
   return (
     <div className="grid">
-      <h3 className="text-lg font-bold">You Wallet is registered!</h3>
+      <h3 className="text-lg">You Wallet is registered!</h3>
       <p className="text-gray-d1 dark:text-gray text-sm mt-2">
         {`Once you have registered your wallet address, we shall be able to create
         your ${APP_NAME} endowment account. You can change your wallet at any

@@ -15,7 +15,7 @@ export default function Leaderboard() {
         url={`${DAPP_DOMAIN}/leaderboard`}
       />
       <DonationMetrics />
-      <h3 className="mt-6 uppercase text-3xl font-bold">Leaderboard</h3>
+      <h3 className="mt-6 uppercase text-3xl">Leaderboard</h3>
       <QueryLoader
         queryState={queryState}
         messages={{

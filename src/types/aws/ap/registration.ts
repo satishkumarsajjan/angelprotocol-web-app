@@ -1,6 +1,7 @@
 import { UNSDG_NUMS } from "types/lists";
 import { EndowmentTierNum } from "../../contracts";
 import { FileObject } from "../common";
+import { EndowDesignation } from "./index";
 
 export type RegistrationStatus =
   | "Inactive"
@@ -78,7 +79,7 @@ export type TDocumentation = {
   KycDonorsOnly: boolean;
   CashEligible: boolean;
   HqCountry: string;
-  EndowDesignation: string;
+  EndowDesignation: EndowDesignation | "";
   // general
   ActiveInCountries: string[];
 };

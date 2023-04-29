@@ -25,9 +25,7 @@ export default function Form({ classes = "" }: { classes?: string }) {
       onSubmit={submit}
       className={`${classes} justify-center gap-8 padded-container w-full max-w-[37.5rem] grid`}
     >
-      <h3 className="text-3xl font-bold text-center">
-        {`Register to ${APP_NAME}`}
-      </h3>
+      <h3 className="text-3xl text-center">{`Register to ${APP_NAME}`}</h3>
 
       <Field<FV>
         name="email"
@@ -38,7 +36,7 @@ export default function Form({ classes = "" }: { classes?: string }) {
         required
         name="hasAgreedToPrivacyPolicy"
         classes={{
-          container: "check-field-reg justify-self-center -mt-4 text-xs",
+          container: "check-field-reg justify-self-center -mt-2 text-xs",
           error: "mt-2",
         }}
       >

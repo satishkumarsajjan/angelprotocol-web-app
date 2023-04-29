@@ -6,7 +6,7 @@ import { Country } from "types/countries";
 import { OptionType } from "components/Selector";
 import { Asset } from "components/registration";
 import { genFileSchema } from "schemas/file";
-import { requiredString } from "schemas/string";
+import { requiredString, url } from "schemas/string";
 import { MAX_SDGS } from "constants/unsdgs";
 
 export const MB_LIMIT = 25;
@@ -34,7 +34,7 @@ function genAssetShape(isRequired: boolean = false): SchemaShape<Asset> {
 export const schema = Yup.object().shape<SchemaShape<FormValues>>({
   proofOfIdentity: Yup.object().shape(genAssetShape(true)),
   proofOfRegistration: Yup.object().shape(genAssetShape(true)),
-  website: Yup.string().required("required").url("invalid url"),
+  website: url,
   sdgs: Yup.array()
     .min(1, "required")
     .max(MAX_SDGS, `maximum ${MAX_SDGS} selections allowed`),

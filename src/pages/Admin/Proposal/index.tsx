@@ -41,7 +41,7 @@ export default function Proposal() {
               <Status status={proposal.status} />
             </div>
             <div className="mt-8 mb-6 flex justify-between items-center border-b-2 border-prim pb-2">
-              <h4 className="font-bold text-lg">{proposal.title}</h4>
+              <h4 className="text-lg">{proposal.title}</h4>
               <PollAction {...proposal} />
             </div>
             <DetailLabel>ends</DetailLabel>
@@ -55,7 +55,7 @@ export default function Proposal() {
               {proposal.description}
             </p>
             <Content {...proposal} />
-            <h4 className="mt-6 uppercase font-bold text-lg py-2 border-b-2 border-prim">
+            <h4 className="mt-6 uppercase text-lg py-2 border-b-2 border-prim">
               Votes
             </h4>
             <Stats {...proposal} />

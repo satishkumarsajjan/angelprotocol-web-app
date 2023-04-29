@@ -60,7 +60,7 @@ export default function Form({ classes = "" }) {
         className="bg-green text-white p-5 rounded-full justify-self-center"
         size={96}
       />
-      <h3 className="text-center text-3xl font-bold leading-snug">
+      <h3 className="text-center text-3xl leading-snug">
         {`Redeem ${APP_NAME} Giftcard`}
       </h3>
       <div className="relative grid w-full border border-prim rounded-lg overflow-clip">

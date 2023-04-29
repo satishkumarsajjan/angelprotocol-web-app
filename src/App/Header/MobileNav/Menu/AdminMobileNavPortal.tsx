@@ -49,13 +49,13 @@ export function AdminMobileNavPortal({ id }: { id: number }) {
             >
               Proposals
             </NavLink>
-            {/*            <NavLink
+            <NavLink
               end
               to={`${appRoutes.admin}/${id}/${adminRoutes.widget_config}/${id}`}
               className={navLinkStyle}
             >
-              Embed Widget
-            </NavLink>*/}
+              Create Widget
+            </NavLink>
           </div>
         </>,
         document.querySelector(`#${adminMobileNavId}`)!

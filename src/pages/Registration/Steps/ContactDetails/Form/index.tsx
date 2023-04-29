@@ -14,7 +14,7 @@ export default function Form({ classes = "" }: { classes?: string }) {
       className={`w-full bg-white dark:bg-blue-d6 ${classes}`}
       onSubmit={submit}
     >
-      <h2 className="font-bold text-center sm:text-left text-xl mb-2">
+      <h2 className="text-center sm:text-left text-xl mb-2">
         Let's start with your contact details
       </h2>
       <p className="text-center sm:text-left text-lg mb-8">
@@ -22,7 +22,7 @@ export default function Form({ classes = "" }: { classes?: string }) {
         you are. Once this form is submitted, you will be able to resume your
         registration if it gets interrupted in the future.
       </p>
-      <h3 className="font-bold mb-4">Personal information</h3>
+      <h3 className="mb-4">Personal information</h3>
       <Field<FV>
         name="firstName"
         label="First name"
@@ -45,7 +45,7 @@ export default function Form({ classes = "" }: { classes?: string }) {
         classes={{ container: "mb-4" }}
       />
       <Field<FV> name="email" label="E-mail address" required disabled />
-      <h3 className="font-bold mt-8 mb-4">Organization information</h3>
+      <h3 className="mt-8 mb-4">Organization information</h3>
       <Field<FV>
         name="orgName"
         label="Name of your organization"
@@ -72,7 +72,7 @@ export default function Form({ classes = "" }: { classes?: string }) {
         }
       </Selector>
 
-      <h3 className="font-bold mt-8 mb-4">Other information</h3>
+      <h3 className="mt-8 mb-4">Other information</h3>
       <Label required className="mb-2">
         How did you find about us?
       </Label>

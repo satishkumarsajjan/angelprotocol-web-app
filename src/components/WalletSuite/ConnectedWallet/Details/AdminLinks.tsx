@@ -29,7 +29,7 @@ export default function AdminLinks(props: WalletState) {
 
   return (
     <div className="grid p-4 gap-3 border-b border-prim">
-      <h3 className="font-heading font-bold text-sm text-gray-d1 dark:text-gray">
+      <h3 className="text-sm text-gray-d1 dark:text-gray">
         Platform Administration
       </h3>
       <div className="flex items-center uppercase font-heading font-semibold text-xs underline underline-offset-2">

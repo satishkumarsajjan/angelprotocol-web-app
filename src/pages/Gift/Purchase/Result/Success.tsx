@@ -17,7 +17,7 @@ export default function Success(props: Props) {
   return (
     <div className={`grid justify-items-center ${props.classes ?? ""}`}>
       <Icon type="CheckCircle" size={109.8} className="text-green mb-8" />
-      <h3 className="text-2xl sm:text-3xl font-bold text-center">
+      <h3 className="text-2xl sm:text-3xl text-center">
         {`Thank you for purchasing ${APP_NAME} Giftcard`}
       </h3>
 

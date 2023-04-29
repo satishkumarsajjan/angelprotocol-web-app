@@ -1,4 +1,4 @@
-import { EndowmentProfileUpdate } from "types/aws";
+import { EndowDesignation, EndowmentProfileUpdate } from "types/aws";
 import { Country } from "types/countries";
 import { UNSDG_NUMS } from "types/lists";
 import { ImgLink } from "components/ImgEditor";
@@ -36,7 +36,7 @@ export type FormValues = Omit<
   | typeof _activity_countries
   | typeof _npo_type
 > & {
-  [_npo_type]: OptionType<string>;
+  [_npo_type]: OptionType<EndowDesignation> | OptionType<"">;
   [_logo]: ImgLink;
   [_img]: ImgLink;
   [_country]: Country;

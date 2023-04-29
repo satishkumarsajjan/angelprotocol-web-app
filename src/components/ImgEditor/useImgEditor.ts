@@ -9,6 +9,7 @@ import ImgCropper from "./ImgCropper";
 type Key = keyof ImgLink;
 const fileKey: Key = "file";
 const previewKey: Key = "preview";
+const precropFileKey: Key = "precropFile";
 
 export default function useImgEditor<T extends FieldValues, K extends keyof T>({
   name,
@@ -17,6 +18,7 @@ export default function useImgEditor<T extends FieldValues, K extends keyof T>({
 }: Props<T, K>) {
   const filePath: any = `${String(name)}.${fileKey}`;
   const previewPath: any = `${String(name)}.${previewKey}`;
+  const precropFilePath: any = `${String(name)}.${precropFileKey}`;
 
   const { setValue, watch } = useFormContext<T>();
   const { showModal } = useModalContext();
@@ -24,14 +26,14 @@ export default function useImgEditor<T extends FieldValues, K extends keyof T>({
     field: { value: currFile, onChange: onFileChange, ref },
   } = useController<T>({ name: filePath });
 
-  const { publicUrl, preview, file }: ImgLink = watch(name as any);
+  const { publicUrl, preview, precropFile }: ImgLink = watch(name as any);
   const isInitial = preview === publicUrl;
   const noneUploaded = !publicUrl && !preview;
 
   const onDrop: DropzoneOptions["onDrop"] = (files: File[]) => {
     const newFile = files[0];
     if (newFile) {
-      //preview & crop valid format only
+      //preview & crop valid formats only
       if (accept.includes(newFile.type)) {
         const preview = URL.createObjectURL(newFile);
         showModal(ImgCropper, {
@@ -44,6 +46,7 @@ export default function useImgEditor<T extends FieldValues, K extends keyof T>({
         });
       }
       onFileChange(newFile);
+      setValue(precropFilePath, newFile as any, { shouldValidate: true });
     }
   };
 
@@ -69,7 +72,7 @@ export default function useImgEditor<T extends FieldValues, K extends keyof T>({
     setValue(previewPath, cropped as any);
     onFileChange(
       new File([blob], originalFile.name, {
-        type: originalFile.type,
+        type: blob.type,
       })
     );
   }
@@ -79,6 +82,7 @@ export default function useImgEditor<T extends FieldValues, K extends keyof T>({
     e.stopPropagation();
     setValue(previewPath, publicUrl as any, { shouldValidate: false });
     setValue(filePath, undefined as any, { shouldValidate: false });
+    setValue(precropFilePath, undefined as any, { shouldValidate: false });
   };
 
   return {
@@ -88,7 +92,7 @@ export default function useImgEditor<T extends FieldValues, K extends keyof T>({
     noneUploaded,
     handleReset,
     preview,
-    file,
+    imgSize: precropFile?.size,
     ref,
   };
 }

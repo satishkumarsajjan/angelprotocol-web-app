@@ -1,6 +1,5 @@
 import { IconType } from "components/Icon";
 import { BASE_DOMAIN, DAPP_DOMAIN } from "constants/common";
-import { LITEPAPER } from "constants/urls";
 
 type SocialMedia =
   | "Twitter"
@@ -61,10 +60,10 @@ type Section = {
 
 export const SECTIONS_DATA: Section[] = [
   {
-    title: "Products",
+    title: "How we can help",
     links: [
       {
-        text: "Non-profits",
+        text: "Nonprofits",
         href: `${BASE_DOMAIN}`,
       },
       {
@@ -79,37 +78,28 @@ export const SECTIONS_DATA: Section[] = [
     ],
   },
   {
-    title: "About",
+    title: "Resources",
     links: [
-      { text: "About us", href: `${BASE_DOMAIN}/about-angel-giving/` },
-      {
-        text: "Meet the team",
-        href: `${BASE_DOMAIN}/about/#:~:text=MEET%20THE%20TEAM-`,
-      },
-      { text: "News", href: `${BASE_DOMAIN}/news/` },
-      { text: "Careers", href: `${BASE_DOMAIN}/careers/` },
-    ],
-  },
-  {
-    title: "Docs",
-    links: [
-      { text: "Litepaper", href: LITEPAPER },
+      { text: "About us", href: `${BASE_DOMAIN}/about/` },
       { text: "FAQs", href: "https://intercom.help/angel-protocol/en" },
-      { text: "Technical doc (coming soon)" },
+      { text: "News", href: `${BASE_DOMAIN}/angel-giving-news/` },
     ],
   },
   {
     title: "Legal",
     links: [
       {
-        text: "Privacy policy",
+        text: "Privacy Policy",
         href: `${BASE_DOMAIN}/privacy-policy/`,
       },
       {
-        text: "Terms of Use",
+        text: "Terms of Use (Platform)",
         href: `${BASE_DOMAIN}/terms-of-use/`,
       },
-      { text: "Terms for NPO", href: `${BASE_DOMAIN}/terms-of-use-npo/` },
+      {
+        text: "Terms of Use (Nonprofits)",
+        href: `${BASE_DOMAIN}/terms-of-use-npo/`,
+      },
     ],
   },
 ];
